@@ -11,6 +11,7 @@ import chess.pieces.Bishop;
 import chess.pieces.King;
 import chess.pieces.Knight;
 import chess.pieces.Pawn;
+import chess.pieces.Queen;
 import chess.pieces.Rook;
 
 public class ChessMatch {
@@ -64,7 +65,8 @@ public class ChessMatch {
 
 	private void initialSetup() {
 		placeNewPiece('h', 7, new Rook(board, Color.WHITE));
-		placeNewPiece('d', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('b', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 1, new Queen(board, Color.WHITE));
 		placeNewPiece('e', 1, new King(board, Color.WHITE));
 		placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
 		placeNewPiece('b', 3, new Bishop(board, Color.WHITE));
@@ -75,6 +77,8 @@ public class ChessMatch {
 		placeNewPiece('a', 7, new Pawn(board, Color.BLACK));
 		placeNewPiece('f', 5, new Bishop(board, Color.BLACK));
 		placeNewPiece('c', 6, new Knight(board, Color.BLACK));
+		placeNewPiece('d', 8, new Queen(board, Color.BLACK));
+		
 	}
 
 	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
